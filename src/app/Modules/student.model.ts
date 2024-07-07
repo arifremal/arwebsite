@@ -1,11 +1,10 @@
-
-import { Schema, model } from 'mongoose';
+import { Schema, model } from 'mongoose'
 import {
   Guardian,
   LocalGuardian,
   Student,
   UserName,
-} from './strudent/strudent.interface';
+} from './strudent/strudent.interface'
 
 const userNameSchema = new Schema<UserName>({
   firstName: {
@@ -19,7 +18,7 @@ const userNameSchema = new Schema<UserName>({
     type: String,
     required: true,
   },
-});
+})
 
 const guardianSchema = new Schema<Guardian>({
   fatherName: {
@@ -46,7 +45,7 @@ const guardianSchema = new Schema<Guardian>({
     type: String,
     required: true,
   },
-});
+})
 
 const localGuradianSchema = new Schema<LocalGuardian>({
   name: {
@@ -65,7 +64,7 @@ const localGuradianSchema = new Schema<LocalGuardian>({
     type: String,
     required: true,
   },
-});
+})
 
 const studentSchema = new Schema<Student>({
   id: { type: String },
@@ -82,6 +81,6 @@ const studentSchema = new Schema<Student>({
   localGuardian: localGuradianSchema,
   profileImg: { type: String },
   isActive: ['active', 'blocked'],
-});
+})
 
-export const StudentModel = model<Student>('Student', studentSchema);
+export const StudentModel = model<Student>('Student', studentSchema)
